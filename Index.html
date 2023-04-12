@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Piedra, Papel o Tijera</title>
+    </head>
+
+    <body>
+
+        <h1>PIEDRA, PAPEL O TIJERA - EVIDENCIA III MOMENTO</h1>
+        <br>
+
+        <fieldset class="fiel_zona_juego">
+            <legend>Zona de juego</legend>
+            
+            <!-- verificacion -->
+            <section>
+                <br>
+                <input id="desea" type="text" placeholder="Ingreso (S/N)">
+                <input type="button" onclick="VerificarIngreso()" value="Enviar">
+                <br><br>
+                <input type="text" disabled id="mostrar_resultado">
+                <br><br>
+            </section>
+
+            <!-- para escojer modos -->
+            <section>
+                <input type="button" onclick="modo_dos()" id="dos_jugadores" value="Dos jugadores">
+                <br>
+                <input type="button" onclick="modo_uno()" id="un_jugador" value="Un jugador">
+            </section>
+                
+            <!-- modos nombres dos -->
+            <section id="nombre_modo_dos">
+                <fieldset class="fiel_nombres_modo_dos">
+                    <legend>Registros de nombres</legend>
+                    <br>
+                        <input type="text" disabled id="modo_dos" id="modo_dos">
+                        <br><br>
+                        <input type="text" id="jugador_uno_dos" placeholder="Nombre del jugador 1">
+                        <br><br>
+                        <input type="text" id="jugador_dos_dos" placeholder="Nombre del jugador 2">
+                        <br><br>
+                        <input type="button" id="boton_nombre_2" onclick="ingresar_modo_dos()" value="Ingresar">
+                </fieldset>
+            </section>
+
+            <!-- modos nombres uno -->
+            <section id="nombre_modo_uno">
+                <fieldset class="fiel_nombres_modo_dos">
+                    <legend>Registros de nombres</legend>
+                    <br>
+                        <input type="text" disabled id="modo_uno">
+                        <br><br>
+                        <input type="text" id="jugador_uno_uno" placeholder="Ingrese su nombre">
+                        <br><br> 
+                        <input type="button" onclick="ingresar_modo_uno()" value="Ingresar">
+                </fieldset>
+            </section>
+
+            <!-- reglas modo uno-->
+            <section id="reglas_modo_uno">
+                <fieldset class="fiel_juego_modo_uno">
+                    <legend>Modo un solo jugador</legend>
+                    <p id="Instrucciones_modo_uno">Digita: PIEDRA, PAPEL O TIJERA</p>
+                    <tr>
+                        <td>
+                            <input id="mostrar_nombre_uno_uno" disabled>
+                        </td>
+                        <td>
+                            <input type="text" id="opcion_jugador_modo_uno">
+                        </td>
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <td>
+                            <input name="turno_computador" disabled placeholder="TURNO COMPUTADOR">
+                        </td>
+                        <td>
+                            <input type="text" id="opcion_computador_modo_uno" name="opcion_computador" disabled>
+                        </td>
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <td>
+                            <input type="button" onclick="jugar_modo_uno()" value="Jugar">
+                        </td>
+                        <td>
+                            <input type="button" id="enviar_registros_uno" onclick="registros_modo_uno_boton()" value="Registrar">
+
+                        </td>
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <td>
+                            <input name="ganador_es" disabled placeholder="EL GANADOR ES: ">
+                        </td>
+                        <td>
+                            <input id="opcion_ganador_modo_uno" name="ganador_modo_uno" disabled>
+                        </td>
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <td>
+                            <input name="ganador_es" disabled placeholder="GANO CON: ">
+                        </td>
+                        <td>
+                            <input id="gano_con_modo_uno" disabled>
+                        </td>
+                    </tr>
+                    <br>
+                </fieldset>
+            </section>
+
+            <!-- reglas modo dos -->
+            <section id="reglas_modo_dos">
+                <fieldset class="fiel_juego_modo_dos">
+                    <legend>Modo dos jugadores</legend>
+                    <p id="Instrucciones_modo_dos">Digita: PIEDRA, PAPEL O TIJERA</p>
+                    <tr>
+                        <td>
+                            <input disabled id="nombre_jugador_uno_modo_dos">
+                        </td>
+                        <td>
+                            <input type="text" id="opcion_jugador_uno_modo_dos">
+                        </td>
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <td>
+                            <input disabled id="nombre_jugador_dos_modo_dos">
+                        </td>
+                        <td>
+                            <input type="text" id="opcion_jugador_dos_modo_dos">
+                        </td>
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <td>
+                            <input type="button" id="enviar_jugador_dos" onclick="jugar_modo_dos()" value="Jugar">
+                        </td>
+                        <td>
+                            <input type="button" id="enviar_registros_dos" onclick="registros_modo_dos_boton();" value="Registrar">
+                        </td>
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <td>
+                            <input id="ganador_es" disabled placeholder="EL GANADOR ES: ">
+                        </td>
+                        <td>
+                            <input id="opcion_ganador_modo_dos" name="opcion_ganador_modo_dos" disabled>
+                        </td>
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <td>
+                            <input id="ganador_es" disabled placeholder="GANO CON: ">
+                        </td>
+                        <td>
+                            <input id="gano_con_modo_dos" disabled>
+                        </td>
+                    </tr>
+                    <br>
+                </fieldset>
+            </section>
+
+            <!-- registros modo uno -->
+            <section id="registros_modo_uno">
+                <fieldset class="fiel_registros_modo_uno">
+                    <legend>Registros modo uno</legend>
+                    <table id="tabla_registros_modo_uno">
+                        <thead>
+                            <tr>
+                                <th><input type="text" disabled value="GANADOR:"></th>
+                                <th><input type="text" disabled value="GANO CON:"></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </fieldset>
+            </section>
+
+            <!-- registros modo dos -->
+            <section id="registros_modo_dos">
+                <fieldset class="fiel_registros_modo_dos">
+                    <legend>Registros modo dos</legend>
+                    <table id="tabla_registros_modo_dos">
+                        <tr>
+                            <th><input type="text" disabled value="GANADOR:"></th>
+                            <th><input type="text" disabled value="GANO CON:"></th>
+                        </tr>
+                    </table>
+                </fieldset>
+            </section>
+
+        </fieldset>
+
+        <script src="/JavaScript/Index.js">
+            // linkeando HTML con JavaScript
+
+        </script>
+
+        <script>
+
+            // registrando_modo_uno
+            function registros_modo_uno_boton() {
+
+                    function registro(opcion_ganador_modo_uno, opcion_gano_con_modo_uno ){
+
+                    this.opcion_ganador_modo_uno = opcion_ganador_modo_uno;
+                    this.opcion_gano_con_modo_uno = opcion_gano_con_modo_uno;
+                }
+
+                var capturar_ganador_registro = document.getElementById ('opcion_ganador_modo_uno').value;
+                var opcion_gano_con_modo_uno = document.getElementById ('gano_con_modo_uno').value;
+                var opcion_ganador_modo_uno;
+
+                nuevo_registro_modo_uno = new registro(capturar_ganador_registro, opcion_gano_con_modo_uno, opcion_ganador_modo_uno);
+                console.log (nuevo_registro_modo_uno);
+
+                añadir_modo_uno();
+
+            }
+
+            var datos_modo_uno = [];
+
+            function añadir_modo_uno(){
+
+                datos_modo_uno.push(nuevo_registro_modo_uno);
+                console.log(datos_modo_uno);
+                document.getElementById ('tabla_registros_modo_uno').innerHTML += '<tbody><tr><td>'+nuevo_registro_modo_uno.opcion_ganador_modo_uno+'</td><td>'+nuevo_registro_modo_uno.opcion_gano_con_modo_uno+'</td></tr></tbody>';
+            };
+
+            // registrando_modo_dos
+            function registros_modo_dos_boton() {
+
+                    function registro(opcion_ganador_modo_dos, opcion_gano_con_modo_dos ){
+
+                    this.opcion_ganador_modo_dos = opcion_ganador_modo_dos;
+                    this.opcion_gano_con_modo_dos = opcion_gano_con_modo_dos;
+                }
+
+            var capturar_ganador_registro = document.getElementById ('opcion_ganador_modo_dos').value;
+            var opcion_gano_con_modo_dos = document.getElementById ('gano_con_modo_dos').value;
+            var opcion_ganador_modo_dos;
+
+            nuevo_registro_modo_dos = new registro(capturar_ganador_registro, opcion_gano_con_modo_dos, opcion_ganador_modo_dos);
+            console.log (nuevo_registro_modo_dos);
+
+            añadir_modo_dos();
+
+            }
+
+            var datos_modo_dos = [];
+
+            function añadir_modo_dos(){
+
+            datos_modo_dos.push(nuevo_registro_modo_dos);
+            console.log(datos_modo_dos);
+            document.getElementById ('tabla_registros_modo_dos').innerHTML += '<tbody><tr><td>'+nuevo_registro_modo_dos.opcion_ganador_modo_dos+'</td><td>'+nuevo_registro_modo_dos.opcion_gano_con_modo_dos+'</td></tr></tbody>';
+            };
+
+        </script>
+
+    </body>
+
+</html>

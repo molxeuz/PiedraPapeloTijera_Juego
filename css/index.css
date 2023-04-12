@@ -1,0 +1,74 @@
+
+/* identificador en modo_uno para esconderlo en HTML y mostrarlo en JavaScript */
+#un_jugador{
+    display: none;
+}
+
+#nombre_modo_uno{
+    display: none;
+}
+
+#reglas_modo_uno{
+    display: none;
+}
+
+#registros_modo_uno{
+    display: none;
+}
+
+/* identificador en modo_dos para esconderlo en HTML y mostrarlo en JavaScript */
+#dos_jugadores{
+    display: none;
+}
+
+#nombre_modo_dos{
+    display: none;
+}
+
+#reglas_modo_dos{
+    display: none;
+}
+
+#registros_modo_dos{
+    display: none;
+}
+
+/* organizando */
+.fiel_zona_juego{
+    height: 550px;
+    width: 785px;
+}
+
+/* organizacion modo_uno*/
+
+.fiel_juego_modo_uno{
+    width: 353px;
+}
+
+.fiel_nombres_modo_uno{
+    width: 200px;
+}
+
+.fiel_registros_modo_uno{
+    width: 353px;
+    height: 246px;
+    margin-left: 400px;
+    margin-top: -266px;
+}
+
+/* organizacion modo_dos*/
+
+.fiel_juego_modo_dos{
+    width: 353px;
+}
+
+.fiel_nombres_modo_dos{
+    width: 200px;
+}
+
+.fiel_registros_modo_dos{
+    width: 353px;
+    height: 246px;
+    margin-left: 400px;
+    margin-top: -266px;
+}
